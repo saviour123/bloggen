@@ -26,13 +26,11 @@ def projects():
 @app.route("/articles")
 def articles():
     return render_template('articles.html')
-# main routes end
 
 @app.route('/<path:path>/')
 def page(path):
     page = pages.get_or_404(path).html
     return render_template('page.html',page=page)
-
 
 
 if __name__ == "__main__":
